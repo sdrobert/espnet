@@ -19,6 +19,7 @@ DATA = [
     "voxforge",
     "mexico-el",
     "voxpopuli",
+    "hlvc",
 ]
 
 SINGLE_LANG = [
@@ -35,6 +36,7 @@ SINGLE_LANG = [
     "jpn",
     "cmn",
     "xty",
+    "fae",
 ]
 LANG_TO_SELECTED_DATASET = {
     "eng1": "mls",
@@ -50,6 +52,7 @@ LANG_TO_SELECTED_DATASET = {
     "jpn": "commonvoice",
     "cmn": "fleurs",
     "xty": "mexico-el",
+    "fae": "hlvc",
 }
 
 

@@ -16,7 +16,7 @@ duration=10min # duration can be either 10min or 1h
 multilingual=true
 lid=false
 only_lid=false
-single_lang=eng # lang for single lang data preparation
+single_lang=fae # lang for single lang data preparation
                 # candidates: eng, deu, rus, pol, swe, jpn, cmn, sat, nob, xty
 
  . utils/parse_options.sh || exit 1;
