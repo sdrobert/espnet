@@ -56,8 +56,11 @@ LANG_TO_SELECTED_DATASET = {
 }
 
 
-def process_text(text):
-    return text.translate(str.maketrans("", "", string.punctuation)).upper()
+def process_text(text, lang):
+    text = text.translate(str.maketrans("", "", string.punctuation))
+    if lang != "fae":
+        text = text.upper()
+    return text
 
 
 if __name__ == "__main__":
@@ -160,7 +163,7 @@ if __name__ == "__main__":
                             ),
                         )
                     )
-                    train_text.write("{} {}\n".format(utt_id, process_text(text)))
+                    train_text.write("{} {}\n".format(utt_id, process_text(text, args.lang)))
                     train_utt2spk.write("{} {}\n".format(utt_id, utt_id))
                 train_transcript.close()
 
@@ -187,7 +190,7 @@ if __name__ == "__main__":
                             ),
                         )
                     )
-                    dev_text.write("{} {}\n".format(utt_id, process_text(text)))
+                    dev_text.write("{} {}\n".format(utt_id, process_text(text, args.lang)))
                     dev_utt2spk.write("{} {}\n".format(utt_id, utt_id))
                 dev_transcript.close()
 
@@ -208,7 +211,7 @@ if __name__ == "__main__":
                         ),
                     )
                 )
-                test_text.write("{} {}\n".format(utt_id, process_text(text)))
+                test_text.write("{} {}\n".format(utt_id, process_text(text, args.lang)))
                 test_utt2spk.write("{} {}\n".format(utt_id, utt_id))
             test_transcript.close()
 
